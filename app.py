@@ -312,8 +312,8 @@ def sedan():
         sedan_pred = "${0:,.2f}".format(sedan_pred)
 
         print(sedan_pred) 
-        # return  render_template("sedan.html", sedan_pred=sedan_pred) 
-    return render_template ("sedan.html", sedan_pred=sedan_pred) )
+        return  render_template("sedan.html", sedan_pred=sedan_pred) 
+    return render_template ("sedan.html")
 
 @app.route("/truck")
 def truck():
