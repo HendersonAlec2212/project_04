@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vehicle Price Predictor</title>
+<!--
+Conquer Template
+http://www.templatemo.com/tm-476-conquer
+-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+			</div>   
+			<div class="single-page-nav sticky-wrapper" id="tmNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="#">Homepage</a></li>
+					<li><a href="{{url_for('sedan')}}">Sedans</a></li>
+					<li><a href="{{url_for('truck')}}">Trucks</a></li>
+					<li><a href="{{url_for('suv')}}">SUVs</a></li>
+				</ul>
+			</div>   
+		</div>
+	</nav>    
+
+	<div id="section1">
+		<header id="header-area" class="intro-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<div class="header-content">
+							<h1>Vehicle Price Predictor</h1>
+							<h4>Machine Learning Model</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+	<div id="section2">
+		<!-- Start Feature Area -->
+		<section id="feature-area" class="about-section">
+			<div class="container">
+				<div class="row text-center inner">
+					<div class="col-sm-4">
+						<div class="feature-content">
+							<img src="static/img/sedan 1.jpg" alt="Image">
+							<h2 class="feature-content-title green-text">Sedans</h2>
+							<p class="feature-content-description">Price prediction modeler for 2 or 4 door, Foreign or domestic Sedans
+							</p>
+							<a href="{{url_for('sedan')}}" class="feature-content-link green-btn">Sedan</a>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="feature-content">
+							<img src="static/img/truck 1.jpg" alt="Image">
+							<h2 class="feature-content-title blue-text">Trucks</h2>
+							<p class="feature-content-description">Price prediction modeler for 2 or 4 door 2-wheel or 4-wheel drive, foreign or domestic trucks</p>                    
+							<a href="{{url_for('truck')}}" class="feature-content-link blue-btn">Truck</a>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="feature-content">
+							<img src="static/img/SUV 1.jpg" alt="Image">
+							<h2 class="feature-content-title red-text">Sport Utility Vehicles</h2>
+							<p class="feature-content-description"> Price prediction modeler for 2-wheel or 4-wheel drive, foreign or domestic SUVs
+							</p>
+							<a href="{{url_for('suv')}}" class="feature-content-link red-btn">SUV</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Feature Area -->
+
+			</div>
+			<div id="section3">
+				<!-- Start Services Area -->
+				<section id="services-area" class="services-section">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 text-center inner our-service">
+								<div class="service">
+									<h1>Future Chart Area</h1>
+									<p>Data Exploration Visualized </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- End Services Area -->
+
+					<!-- Start Insert Chart here Area -->
+					<section id="chart-area">
+						<div class="container">
+							<div class="row text-center">
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+									<div class="testimonial-content">
+										<img src="static/img/4-1.jpg" alt="Image">
+										<h2>Column One</h2>
+										<p>Ut ac odio scelerisque ante ornare commodo. Sed faucibus dui libero, in tincidunt purus pretium quis. Fusce posuere egestas enim eu viverra.</p>
+										<br>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+									<div class="testimonial-content">
+										<img src="static/img/4-2.jpg" alt="Image">
+										<h2>Column Two</h2>
+										<p>Ut ac odio scelerisque ante ornare commodo. Sed faucibus dui libero, in tincidunt purus pretium quis.</p>
+										<a href="#" class="content-link">read it</a>
+										<br>
+										<p id="redd"></p>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+									<div class="testimonial-content">
+										<img src="static/img/4-3.jpg" alt="Image">
+										<h2>Column Three</h2>
+										<p>Ut ac odio scelerisque ante ornare commodo. Sed faucibus dui libero, in tincidunt purus pretium quis. Fusce posuere egestas enim eu viverra.</p>
+										<br>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+									<div class="testimonial-content">
+										<img src="static/img/4-4.jpg" alt="Image">
+										<h2>Column Four</h2>
+										<p>Ut ac odio scelerisque ante ornare commodo. Sed faucibus dui libero, in tincidunt purus pretium quis.</p>
+										<a href="#" class="content-link">details</a>
+										<br>
+										<p id="dets"></p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="tm-box">
+										<img src="static/img/highway aerial.jpg" alt="Image" class="img-responsive">
+										<div class="tm-box-description">
+											<h2>Data Visualizations</h2>
+											<p class="tm-box-p">Prediction model created using a large data set from kaggle.com.  The dataset consisted of 5.7 million daily listing from about 1,200 dealers in Illinois between June 2018 and 2020.</p>
+											<p class="tm-box-p">Visualizations of dataset can be found here.</p>
+											<a href="#" class="content-link">Read More</a>    
+										</div>                        
+									</div>                    
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- End Testimornial Area -->
+				</div>
+				
+					<!-- Start Footer Area -->
+					<footer id="footer-area">
+						<div class="container">
+							<div class="row text-center">
+								<div class="col-sm-12">
+									<div class="footer-content">
+										<h1>Data Visiualizations Project 4</h1>
+										<p>“Conquer is free Bootstrap template from templatemo website. 
+											<br>No backlink is required to use this layout.”</p>
+										</div>                
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-12 text-center">             
+										<p class="copy">Celena Blackwood, Vilma Diaz, Alec Henderson, Andrew Paton, Dan Tinarwo </p>
+									</div>
+								</div>
+							</div>
+						</footer>
+						<!-- End Footer Area -->
+
+						<script src="../static/js/jquery-1.11.2.min.js"></script>
+						<script src="../static/js/jquery.scrollUp.min.js"></script> <!-- https://github.com/markgoodyear/scrollup -->
+						<script src="../static/js/jquery.singlePageNav.min.js"></script> <!-- https://github.com/ChrisWojcik/single-page-nav -->
+						<script src="../static/js/parallax.js-1.3.1/parallax.js"></script> <!-- http://pixelcog.github.io/parallax.js/ -->
+						<script>
+
+    // HTML document is loaded. DOM is ready.
+    $(function() {  
+
+    // Parallax
+        $('.intro-section').parallax({
+        	imageSrc: 'static/img/bg-1.jpg',
+        	speed: 0.2
+        });
+        $('.services-section').parallax({
+        	imageSrc: 'static/img/bg-2.jpg',
+        	speed: 0.2
+    	});
+        $('.contact-section').parallax({
+        	imageSrc: 'static/img/bg-3.jpg',
+        	speed: 0.2
+        });    
+
+        // jQuery Scroll Up / Back To Top Image
+        $.scrollUp({
+                scrollName: 'scrollUp',      // Element ID
+		        scrollDistance: 300,         // Distance from top/bottom before showing element (px)
+		        scrollFrom: 'top',           // 'top' or 'bottom'
+		        scrollSpeed: 1000,            // Speed back to top (ms)
+		        easingType: 'linear',        // Scroll to top easing (see http://easings.net/)
+		        animation: 'fade',           // Fade, slide, none
+		        animationSpeed: 300,         // Animation speed (ms)		        
+		        scrollText: '', // Text for element, can contain HTML		        
+		        scrollImg: true            // Set true to use image		        
+            });
+
+        // ScrollUp Placement
+        $( window ).on( 'scroll', function() {
+
+            // If the height of the document less the height of the document is the same as the
+            // distance the window has scrolled from the top...
+            if ( $( document ).height() - $( window ).height() === $( window ).scrollTop() ) {
+
+                // Adjust the scrollUp image so that it's a few pixels above the footer
+                $('#scrollUp').css( 'bottom', '80px' );
+
+            } else {      
+                // Otherwise, leave set it to its default value.
+                $('#scrollUp').css( 'bottom', '30px' );        
+            }
+        });
+
+        $('.single-page-nav').singlePageNav({
+        	offset: $('.single-page-nav').outerHeight(),
+        	speed: 1500,
+        	filter: ':not(.external)',
+        	updateHash: true
+        });
+
+        $('.navbar-toggle').click(function(){
+        	$('.single-page-nav').toggleClass('show');
+        });
+
+        $('.single-page-nav a').click(function(){
+        	$('.single-page-nav').removeClass('show');
+        });
+        
+    });
+</script>
+</body>
+</html>
