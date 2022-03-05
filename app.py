@@ -1,8 +1,8 @@
-from asyncio import Event, events
-from distutils.log import debug, set_verbosity
-from sklearn import model_selection
-from werkzeug.utils import secure_filename
-import pandas as pd
+# from asyncio import Event, events
+# from distutils.log import debug, set_verbosity
+# from sklearn import model_selection
+# from werkzeug.utils import secure_filename
+# import pandas as pd
 import joblib
 from flask import Flask, render_template, request, redirect, jsonify, make_response
 
@@ -312,8 +312,8 @@ def sedan():
         sedan_pred = "${0:,.2f}".format(sedan_pred)
 
         print(sedan_pred) 
-        return  render_template("sedan.html", sedan_pred=sedan_pred) 
-    return render_template ("sedan.html")
+        # return  render_template("sedan.html", sedan_pred=sedan_pred) 
+    return render_template ("sedan.html", sedan_pred=sedan_pred) )
 
 @app.route("/truck")
 def truck():
