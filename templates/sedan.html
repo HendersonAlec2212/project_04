@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../static/css/style.css">
 </head>
+<!--<header class = "intro-header" style ="background-image: url('../static/img/sedan\ 1.jpg')"></header>-->
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
@@ -31,29 +32,327 @@
 		</div>
 	</nav>    
     <!-- Start Form Area -->
-			<div class="row">
+			<div class="row" style="margin-top: 200px;">
 				<div class="row text-center inner">
 					<div class="col-lg-12">
-                        <p>Here's the list of subjects. Select any one:</p>
-                        <form method="POST" action ="/model" role = "form", name="petform">
-							<div class = "form-group">
-								<label for = "inputMileage">Vehicle Mileage</label>
-								<input type ="text" id = "inputMileage" name = "mileage">
-							</div>
-							<br>
+                        <p>Enter vehicle information for estimation of veichle price.</p>
+               			<form method="POST" action ="/sedan" role = "form"> 
 							<div class = "form-group">
 								<label for = "inputYear"> Vehicle Year</label>
-								<input type = "text" id ="inputYear" name="year">
+								<input type = "text" id ="inputYear" name="inputYear">
 							</div>
 							<br>
-                           <select name = "dropdown">
-                              <option value = "Computer Architecture" selected>Computer Architecture</option>
-                              <option value = "Java">Java</option>
-                              <option value = "Discrete Mathematics">Discrete Mathematics</option>
-                           </select><br><br>
+							<div class = "form-group">
+								<label for = "inputMileage">Vehicle Mileage</label>
+								<input type ="text"  id = "inputMileage" name = "inputMileage">
+							</div>
+							<br>
+							<div class = "form-group">
+								<label for = "cylinders">Vehicle Cylinders</label>
+								<input type ="text" id = "cylinders" name = "cylinders">
+							</div>
+							<label for ="Make">Choose a vehicle make:</label>
+                           <select name = "Make" id="Make">
+                              <option value = "1" selected>ALFA ROMEO</option>
+                              <option value = "2">ASTON MARTIN</option>
+                              <option value = "3">AUDI</option>
+							  <option value = "4">BENTLEY</option>
+							  <option value = "5">BMW</option>  
+							  <option value = "6">BUICK</option>  
+							  <option value = "7">CADILLAC</option>  
+							  <option value = "8">CHEVROLET</option>  
+							  <option value = "9">CHRYSLER</option>  
+							  <option value = "10">DODGE</option>  
+							  <option value = "11">FORD</option>  
+							  <option value = "12">GENESIS</option>  
+							  <option value = "13">HONDA</option>  
+							  <option value = "14">HYUNDAI</option>
+							  <option value = "15">INFINITI</option>  
+							  <option value = "16">JAGUAR</option>  
+							  <option value = "17">KIA</option>  
+							  <option value = "18">LEXUS</option>  
+							  <option value = "19">LINCOLN</option>  
+							  <option value = "20">MASERATI</option>  
+							  <option value = "21">MAZDA</option>  
+							  <option value = "22">MERCEDES-BENZ</option>  
+							  <option value = "23">MERCURY</option>   
+							  <option value = "24">MITSUBISHI</option>  
+							  <option value = "25">NISSAN</option>  
+							  <option value = "26">OLDSMOBILE</option>  
+							  <option value = "27">PONTIAC</option>  
+							  <option value = "28">PORSCHE</option>  
+							  <option value = "29">SATURN</option>  
+							  <option value = "30">SUBARU</option>  
+							  <option value = "31">TOYOTA</option>  
+							  <option value = "32">VOLKSWAGEN</option>  
+							  <option value = "33">VOLVO</option>   
+                           </select>
+						   <br><br>
+						<label for ="Model">Choose a vehicle model:</label>
+					   <select name = "Model" id="Model">
+						<option value = "37"> 300</option>
+						<option value = "38"> 300C</option>
+						<option value = "39"> 320i</option>
+						<option value = "40"> 323i</option>
+						<option value = "41"> 325i</option>
+						<option value = "42"> 325xi</option>
+						<option value = "43"> 328d</option>
+						<option value = "44"> 328i</option>
+						<option value = "45"> 328xi</option>
+						<option value = "46"> 330e</option>
+						<option value = "47"> 330i</option>
+						<option value = "48"> 330xi</option>
+						<option value = "49"> 335</option>
+						<option value = "50"> 335d</option>
+						<option value = "51"> 335i</option>
+						<option value = "52"> 335xi</option>
+						<option value = "53"> 340i</option>
+						<option value = "54"> 428i</option>
+						<option value = "55"> 430i</option>
+						<option value = "56"> 435i</option>
+						<option value = "57"> 440i</option>
+						<option value = "58"> 525i</option>
+						<option value = "59"> 525iA</option>
+						<option value = "60"> 525xi</option>
+						<option value = "61"> 528i</option>
+						<option value = "62"> 528xi</option>
+						<option value = "63"> 530e</option>
+						<option value = "64"> 530i</option>
+						<option value = "65"> 530iA</option>
+						<option value = "66"> 530xi</option>
+						<option value = "67"> 535d</option>
+						<option value = "68"> 535i</option>
+						<option value = "69"> 535i/535is</option>
+						<option value = "70"> 535xi</option>
+						<option value = "71"> 540i</option>
+						<option value = "72"> 545i</option>
+						<option value = "73"> 550i</option>
+						<option value = "74"> 626</option>
+						<option value = "75"> 640i</option>
+						<option value = "76"> 640xi</option>
+						<option value = "77"> 650i</option>
+						<option value = "78"> 650i / ALPINA B6</option>
+						<option value = "79"> 650i / B6</option>
+						<option value = "80"> 740Li</option>
+						<option value = "81"> 740i</option>
+						<option value = "82"> 740iL</option>
+						<option value = "83"> 745Li</option>
+						<option value = "84"> 750Li</option>
+						<option value = "85"> 750Li / ALPINA B7</option>
+						<option value = "86"> 750Lxi</option>
+						<option value = "87"> 750Lxi / ALPINA B7</option>
+						<option value = "88"> 750i</option>
+						<option value = "89"> 750i / ALPINA B7</option>
+						<option value = "90"> 750i / B7</option>
+						<option value = "91"> 750xi</option>
+						<option value = "92"> 750xi / ALPINA B7</option>
+						<option value = "93"> A-Class</option>
+						<option value = "94"> A3</option>
+						<option value = "95"> A4</option>
+						<option value = "96"> A6</option>
+						<option value = "97"> A7</option>
+						<option value = "98"> A8</option>
+						<option value = "99"> ATS</option>
+						<option value = "100"> Accent</option>
+						<option value = "101"> Accord</option>
+						<option value = "102"> ActiveHybrid 5</option>
+						<option value = "103"> Alero</option>
+						<option value = "104"> Altima</option>
+						<option value = "105"> Amanti</option>
+						<option value = "106"> Arteon</option>
+						<option value = "107"> Aura</option>
+						<option value = "108"> Avalon</option>
+						<option value = "109"> Avenger</option>
+						<option value = "110"> Aveo</option>
+						<option value = "111"> Azera</option>
+						<option value = "112"> Bonneville</option>
+						<option value = "113"> Brooklands</option>
+						<option value = "114"> Brougham</option>
+						<option value = "115"> C-Class</option>
+						<option value = "116"> C-HR</option>
+						<option value = "117"> CC</option>
+						<option value = "118"> CLA-Class</option>
+						<option value = "119"> CLS-Class</option>
+						<option value = "120"> CT6</option>
+						<option value = "121"> CTS</option>
+						<option value = "122"> Cadenza</option>
+						<option value = "123"> Camry</option>
+						<option value = "124"> Caprice</option>
+						<option value = "125"> Caprice Police Vehicle</option>
+						<option value = "126"> Cavalier</option>
+						<option value = "127"> Challenger</option>
+						<option value = "128"> Charger</option>
+						<option value = "129"> Cirrus</option>
+						<option value = "130" > Civic</option>
+						<option value = "131"> Cobalt</option>
+						<option value = "132"> Concorde</option>
+						<option value = "133"> Concorde/LHS</option>
+						<option value = "134"> Continental</option>
+						<option value = "135"> Corolla</option>
+						<option value = "136"> Corolla Matrix</option>
+						<option value = "137"> Corsica</option>
+						<option value = "138"> Cougar</option>
+						<option value = "139"> Crown Victoria</option>
+						<option value = "140"> Cruze</option>
+						<option value = "141"> DTS</option>
+						<option value = "142"> Dart</option>
+						<option value = "143"> Deville</option>
+						<option value = "144"> E-Class</option>
+						<option value = "145"> ES</option>
+						<option value = "146"> Echo</option>
+						<option value = "147"> Elantra</option>
+						<option value = "148"> Equus</option>
+						<option value = "149"> Escort</option>
+						<option value = "150"> Fiesta</option>
+						<option value = "151"> Five Hundred</option>
+						<option value = "152"> Fleetwood</option>
+						<option value = "153"> Focus</option>
+						<option value = "154"> Forte</option>
+						<option value = "155"> Fusion</option>
+						<option value = "156"> G25</option>
+						<option value = "157"> G35</option>
+						<option value = "158"> G37</option>
+						<option value = "159"> G5</option>
+						<option value = "160"> G6</option>
+						<option value = "161"> G70</option>
+						<option value = "162"> G8</option>
+						<option value = "163"> G80</option>
+						<option value = "164"> G90</option>
+						<option value = "165"> GLI</option>
+						<option value = "166"> GS</option>
+						<option value = "167"> Genesis</option>
+						<option value = "168"> Geo Prizm</option>
+						<option value = "169"> Ghibli</option>
+						<option value = "170"> Giulia (952)</option>
+						<option value = "171"> Grand AM</option>
+						<option value = "172"> Grand Marquis</option>
+						<option value = "173"> Grand Prix</option>
+						<option value = "174"> HS</option>
+						<option value = "175"> I30</option>
+						<option value = "176"> I35</option>
+						<option value = "177"> ILX</option>
+						<option value = "178"> IS</option>
+						<option value = "179"> Impala</option>
+						<option value = "180"> Impala Limited</option>
+						<option value = "181"> Impreza</option>
+						<option value = "182"> Insight</option>
+						<option value = "183"> Integra</option>
+						<option value = "184"> Intrepid</option>
+						<option value = "185"> Ion</option>
+						<option value = "186"> Jetta</option>
+						<option value = "187"> K900</option>
+						<option value = "188"> L300</option>
+						<option value = "189"> LHS</option>
+						<option value = "190"> LS</option>
+						<option value = "191"> LS1</option>
+						<option value = "192"> LaCrosse</option>
+						<option value = "193"> LeSabre</option>
+						<option value = "194"> Legacy</option>
+						<option value = "195"> Lucerne</option>
+						<option value = "196"> M3</option>
+						<option value = "197"> M340i</option>
+						<option value = "198"> M35</option>
+						<option value = "199"> M35h</option>
+						<option value = "200"> M37</option>
+						<option value = "201"> M45</option>
+						<option value = "202"> M5</option>
+						<option value = "203"> M550i</option>
+						<option value = "204"> M56</option>
+						<option value = "205"> M6</option>
+						<option value = "206"> MKS</option>
+						<option value = "207"> MKZ</option>
+						<option value = "208"> Malibu</option>
+						<option value = "209"> Malibu Classic</option>
+						<option value = "210"> Marauder</option>
+						<option value = "211"> Mark</option>
+						<option value = "212"> Maxima</option>
+						<option value = "213"> Mazda3</option>
+						<option value = "214"> Mazda6</option>
+						<option value = "215"> Milan</option>
+						<option value = "216"> Mirage G4</option>
+						<option value = "217"> Montego</option>
+						<option value = "218"> Mulsanne</option>
+						<option value = "219"> Neon</option>
+						<option value = "220"> Ninety Eight (98)</option>
+						<option value = "221"> Optima</option>
+						<option value = "222"> PRIUS</option>
+						<option value = "223"> Panamera</option>
+						<option value = "224"> Passat</option>
+						<option value = "225"> Phaeton</option>
+						<option value = "226"> Protege</option>
+						<option value = "227"> Q50</option>
+						<option value = "228"> Q70</option>
+						<option value = "229"> Q70L</option>
+						<option value = "230"> Quattroporte</option>
+						<option value = "231"> RL</option>
+						<option value = "232"> RLX</option>
+						<option value = "233"> RS3</option>
+						<option value = "234"> RS4</option>
+						<option value = "235"> RS7</option>
+						<option value = "236"> Rapide</option>
+						<option value = "237"> Regal</option>
+						<option value = "238"> Rio</option>
+						<option value = "239"> S-Class</option>
+						<option value = "240"> S3</option>
+						<option value = "241"> S4</option>
+						<option value = "242"> S40</option>
+						<option value = "243"> S6</option>
+						<option value = "244"> S60</option>
+						<option value = "245"> S60 Cross Country</option>
+						<option value = "246"> S7</option>
+						<option value = "247"> S8</option>
+						<option value = "248"> S80</option>
+						<option value = "249"> S90</option>
+						<option value = "250"> SS</option>
+						<option value = "251"> STS</option>
+						<option value = "252"> SVX</option>
+						<option value = "253"> Sable</option>
+						<option value = "254"> Scion iA</option>
+						<option value = "255"> Sebring</option>
+						<option value = "256"> Sentra</option>
+						<option value = "257"> Seville</option>
+						<option value = "258"> Sonata</option>
+						<option value = "259"> Sonic</option>
+						<option value = "260"> Spectra</option>
+						<option value = "261"> Stratus</option>
+						<option value = "262"> TL</option>
+						<option value = "263"> TLX</option>
+						<option value = "264"> TSX</option>
+						<option value = "265"> Taurus</option>
+						<option value = "266"> Town Car</option>
+						<option value = "267"> Veloster</option>
+						<option value = "268"> Verano</option>
+						<option value = "269"> Versa</option>
+						<option value = "270"> WRX</option>
+						<option value = "271"> X-Type</option>
+						<option value = "272"> XE</option>
+						<option value = "273"> XF</option>
+						<option value = "274"> XJ</option>
+						<option value = "275"> XTS</option>
+						<option value = "276"> Yaris</option>
+						<option value = "277"> Yaris iA</option>
+						<option value = "278"> Zephyr</option>
+						<option value = "279"> new Passat</option>
+						</select>
+						<br>
+						<label for ="gasoline">Choose fuel type:</label>
+                           <select name = "gasoline" id="gasoline">
+                              <option value = "0" selected>Gasoline</option>
+                              <option value = "1">Diesel</option>
+							  </select>
+							  <br><br>
 						   <input type = "submit" value="Submit">
                         </form>
 					</div>
+					<div class="col-md-6">
+
+						{% if sedan_pred %} 
+						  <div class="prediction">
+							Your predicted price is: {{sedan_pred}}
+						  </div>
+						{% endif %}
+					  </div>
+				
 				</div>
 			</div>
 	<!-- End Form Area -->
