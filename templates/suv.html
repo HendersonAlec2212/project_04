@@ -30,7 +30,241 @@
 			</div>   
 		</div>
 	</nav>   
+	<!-- Start Form Area -->
+	<div class="row" style="margin-top: 200px;">
+		<div class="row text-center inner">
+			<div class="col-lg-12">
+				<p>Enter vehicle information for estimation of veichle price.</p>
+				   <form method="POST" action ="/suv" role = "form"> 
+					<div class = "form-group">
+						<label for = "inputYear"> Vehicle Year</label>
+						<input type = "text" id ="inputYear" name="inputYear">
+					</div>
+					<br>
+					<div class = "form-group">
+						<label for = "inputMileage">Vehicle Mileage</label>
+						<input type ="text"  id = "inputMileage" name = "inputMileage">
+					</div>
+					<br>
+					<div class = "form-group">
+						<label for = "cylinders">Vehicle Cylinders</label>
+						<input type ="text" id = "cylinders" name = "cylinders">
+					</div>
+					<label for ="Make">Choose a vehicle make:</label>
+				   <select name = "Make" id="Make">
+					<option value = "4" selected>ALFA ROMEO</option>
+					<option value = "5"> AUDI</option>
+					<option value = "6"> BMW</option>
+					<option value = "7"> BUICK</option>
+					<option value = "8"> CADILLAC</option>
+					<option value = "9"> CHEVROLET</option>
+					<option value = "10"> CHRYSLER</option>
+					<option value = "11"> DODGE</option>
+					<option value = "12"> FIAT</option>
+					<option value = "13"> FORD</option>
+					<option value = "14"> GMC</option>
+					<option value = "15"> HONDA</option>
+					<option value = "16"> HUMMER</option>
+					<option value = "17"> ISUZU</option>
+					<option value = "18"> JAGUAR</option>
+					<option value = "19"> JEEP</option>
+					<option value = "20"> KIA</option>
+					<option value = "21"> LAND ROVER</option>
+					<option value = "22"> LEXUS</option>
+					<option value = "23"> LINCOLN</option>
+					<option value = "24"> MASERATI</option>
+					<option value = "25"> MAZDA</option>
+					<option value = "26"> MERCEDES-BENZ</option>
+					<option value = "27"> MERCURY</option>
+					<option value = "28"> MINI</option>
+					<option value = "29"> MITSUBISHI</option>
+					<option value = "30"> PONTIAC</option>
+					<option value = "31"> PORSCHE</option>
+					<option value = "32"> SAAB</option>
+					<option value = "33"> SATURN</option>
+					<option value = "34"> SUBARU</option>
+					<option value = "35"> SUZUKI</option>
+					<option value = "36"> TOYOTA</option>
+					<option value = "37"> VOLKSWAGEN</option>
+					<option value = "38"> VOLVO</option>
+				 </select> 
+				   </select>
+				   <br><br>
+				<label for ="Model">Choose a vehicle model:</label>
+			   <select name = "Model" id="Model">
+				<option value = "39"> 500X</option>
+				<option value = "40"> 9-4x</option>
+				<option value = "41"> 9-7X</option>
+				<option value = "42"> A4 allroad</option>
+				<option value = "43"> Acadia</option>
+				<option value = "44"> Accord Crosstour</option>
+				<option value = "45"> Ascent</option>
+				<option value = "46"> Aspen</option>
+				<option value = "47"> Atlas</option>
+				<option value = "48"> Aviator</option>
+				<option value = "49"> Axiom</option>
+				<option value = "50"> Aztek</option>
+				<option value = "51"> Blazer</option>
+				<option value = "52"> Bronco</option>
+				<option value = "53"> CJ-7</option>
+				<option value = "54"> CR-V</option>
+				<option value = "55"> Captiva Sport</option>
+				<option value = "56"> Cayenne</option>
+				<option value = "57"> Cherokee</option>
+				<option value = "58"> Commander</option>
+				<option value = "59"> Compass</option>
+				<option value = "60"> Cooper</option>
+				<option value = "61"> Cooper Countryman</option>
+				<option value = "62"> Cooper S Countryman</option>
+				<option value = "63"> Crosstour</option>
+				<option value = "64"> Discovery</option>
+				<option value = "65"> Discovery Sport</option>
+				<option value = "66"> Durango</option>
+				<option value = "67"> E-PACE</option>
+				<option value = "68"> Edge</option>
+				<option value = "69"> Element</option>
+				<option value = "70"> Enclave</option>
+				<option value = "71"> Encore</option>
+				<option value = "72"> Envision</option>
+				<option value = "73"> Envoy</option>
+				<option value = "74"> Equinox</option>
+				<option value = "75"> Escalade</option>
+				<option value = "76"> Escalade ESV</option>
+				<option value = "77"> Escape</option>
+				<option value = "78"> Excursion</option>
+				<option value = "79"> Expedition</option>
+				<option value = "80"> Expedition MAX</option>
+				<option value = "81"> Explorer</option>
+				<option value = "82"> Explorer Sport</option>
+				<option value = "83"> Explorer Sport Trac</option>
+				<option value = "84"> F-Pace</option>
+				<option value = "85"> Flex</option>
+				<option value = "86"> Freestyle</option>
+				<option value = "87"> G-Class</option>
+				<option value = "88"> GL-Class</option>
+				<option value = "89"> GLA-Class</option>
+				<option value = "90"> GLB-Class</option>
+				<option value = "91"> GLC-Class</option>
+				<option value = "92"> GLE-Class</option>
+				<option value = "93"> GLK-Class</option>
+				<option value = "94"> GLS-Class</option>
+				<option value = "95"> GX</option>
+				<option value = "96"> Grand Cherokee</option>
+				<option value = "97"> Grand Vitara</option>
+				<option value = "98"> Grand Wagoneer</option>
+				<option value = "99"> H2</option>
+				<option value = "100"> H3</option>
+				<option value = "101"> HHR</option>
+				<option value = "102"> HR-V</option>
+				<option value = "103"> Highlander</option>
+				<option value = "104"> LR2</option>
+				<option value = "105"> LR3</option>
+				<option value = "106"> LR4</option>
+				<option value = "107"> LX</option>
+				<option value = "108"> Levante</option>
+				<option value = "109"> Liberty</option>
+				<option value = "110"> M-Class</option>
+				<option value = "111"> MDX</option>
+				<option value = "112"> METRIS</option>
+				<option value = "113"> MKC</option>
+				<option value = "114"> MKT</option>
+				<option value = "115"> MKX</option>
+				<option value = "116"> ML-Class</option>
+				<option value = "117"> Macan</option>
+				<option value = "118"> Mariner</option>
+				<option value = "119"> Montero</option>
+				<option value = "120"> Montero Sport</option>
+				<option value = "121"> Mountaineer</option>
+				<option value = "122"> Nautilus</option>
+				<option value = "123"> Navigator</option>
+				<option value = "124"> Nitro</option>
+				<option value = "125"> Outlook</option>
+				<option value = "126"> Pacifica</option>
+				<option value = "127"> Passport</option>
+				<option value = "128"> Patriot</option>
+				<option value = "129"> Pilot</option>
+				<option value = "130"> Q3</option>
+				<option value = "131"> Q5</option>
+				<option value = "132"> Q7</option>
+				<option value = "133"> R-Class</option>
+				<option value = "134"> RAV4</option>
+				<option value = "135"> RDX</option>
+				<option value = "136"> RX</option>
+				<option value = "137"> Rainier</option>
+				<option value = "138"> Range Rover</option>
+				<option value = "139"> Range Rover Evoque</option>
+				<option value = "140"> Range Rover Sport</option>
+				<option value = "141"> Range Rover Velar</option>
+				<option value = "142"> Rendezvous</option>
+				<option value = "143"> Renegade</option>
+				<option value = "144"> Rodeo/Amigo</option>
+				<option value = "145"> SQ5</option>
+				<option value = "146"> SRX</option>
+				<option value = "147"> Sorento</option>
+				<option value = "148"> Sportage</option>
+				<option value = "149"> Sprinter</option>
+				<option value = "150"> Stelvio</option>
+				<option value = "151"> Suburban</option>
+				<option value = "152"> Tahoe</option>
+				<option value = "153"> Taurus X</option>
+				<option value = "154"> Terrain</option>
+				<option value = "155"> Tiguan</option>
+				<option value = "156"> Tiguan Limited</option>
+				<option value = "157"> Torrent</option>
+				<option value = "158"> Touareg</option>
+				<option value = "159"> Tracker</option>
+				<option value = "160"> Trailblazer</option>
+				<option value = "161"> Traverse</option>
+				<option value = "162"> Trax</option>
+				<option value = "163"> Tribute</option>
+				<option value = "164"> Vue</option>
+				<option value = "165"> Wrangler</option>
+				<option value = "166"> Wrangler JK</option>
+				<option value = "167"> X1</option>
+				<option value = "168"> X2</option>
+				<option value = "169"> X3</option>
+				<option value = "170"> X4</option>
+				<option value = "171"> X5</option>
+				<option value = "172"> X6</option>
+				<option value = "173"> XC40</option>
+				<option value = "174"> XC60</option>
+				<option value = "175"> XC90</option>
+				<option value = "176"> XL7</option>
+				<option value = "177"> XT4</option>
+				<option value = "178"> XT5</option>
+				<option value = "179"> XT6</option>
+				<option value = "180"> Yukon</option>
+				<option value = "181"> Yukon XL</option>
+				<option value = "182"> ZDX</option>
+				</select>
+				<br>
+				<!-- <label for ="allroad">Choose fuel type:</label>
+				   <select name = "allroad" id="allroad">
+					  <option value = "0" selected>2 Wheel Drive</option>
+					  <option value = "1">4 Wheel Drive</option>
+					  </select> -->
+					  <br><br>
+				<label for ="gasoline">Choose fuel type:</label>
+				   <select name = "gasoline" id="gasoline">
+					  <option value = "0" selected>Gasoline</option>
+					  <option value = "1">Diesel</option>
+					  </select>
+					  <br><br>
+				   <input type = "submit" value="Submit">
+				</form>
+			</div>
+			<div class="col-md-6">
 	
+				{% if suv_pred %} 
+				  <div class="prediction">
+					Your predicted price is: {{suv_pred}}
+				  </div>
+				{% endif %}
+			  </div>
+		
+		</div>
+	</div>
+	<!-- End Form Area -->
 	
 	<script src="../static/js/jquery-1.11.2.min.js"></script>
 	<script src="../static/js/jquery.scrollUp.min.js"></script> <!-- https://github.com/markgoodyear/scrollup -->

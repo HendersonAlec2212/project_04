@@ -30,6 +30,108 @@
 			</div>   
 		</div>
 	</nav>    
+ <!-- Start Form Area -->
+ <div class="row" style="margin-top: 200px;">
+	<div class="row text-center inner">
+		<div class="col-lg-12">
+			<p>Enter vehicle information for estimation of veichle price.</p>
+			   <form method="POST" action ="/truck" role = "form"> 
+				<div class = "form-group">
+					<label for = "inputYear"> Vehicle Year</label>
+					<input type = "text" id ="inputYear" name="inputYear">
+				</div>
+				<br>
+				<div class = "form-group">
+					<label for = "inputMileage">Vehicle Mileage</label>
+					<input type ="text"  id = "inputMileage" name = "inputMileage">
+				</div>
+				<br>
+				<div class = "form-group">
+					<label for = "cylinders">Vehicle Cylinders</label>
+					<input type ="text" id = "cylinders" name = "cylinders">
+				</div>
+				<label for ="Make">Choose a vehicle make:</label>
+			   <select name = "Make" id="Make">
+				  <option value = "4" selected>DODGE</option>
+				  <option value = "5"> FORD</option>
+					<option value = "6"> GMC</option>
+					<option value = "7"> HONDA</option>
+					<option value = "8"> HUMMER</option>
+					<option value = "9"> ISUZU</option>
+					<option value = "10"> JEEP</option>
+					<option value = "11"> LINCOLN</option>
+					<option value = "12"> MAZDA</option>
+					<option value = "13"> MITSUBISHI</option>
+					<option value = "14"> NISSAN</option>
+					<option value = "15"> RAM</option>
+					<option value = "16"> TOYOTA</option> 
+			   </select>
+			   <br><br>
+			<label for ="Model">Choose a vehicle model:</label>
+		   <select name = "Model" id="Model">
+			<option value = "17"> 2500</option>
+			<option value = "18"> 3500</option>
+			<option value = "19"> B-Series</option>
+			<option value = "20"> Blackwood</option>
+			<option value = "21"> Canyon</option>
+			<option value = "22"> Colorado</option>
+			<option value = "23"> D-Series</option>
+			<option value = "24"> Dakota</option>
+			<option value = "25"> El Camino</option>
+			<option value = "26"> Explorer Sport Trac</option>
+			<option value = "27"> F-150</option>
+			<option value = "28"> F-150 Heritage</option>
+			<option value = "29"> F-250</option>
+			<option value = "30"> F-350</option>
+			<option value = "31"> F-450</option>
+			<option value = "32"> Frontier</option>
+			<option value = "33"> GMT-400</option>
+			<option value = "34"> Gladiator</option>
+			<option value = "35"> H3T</option>
+			<option value = "36"> Mark LT</option>
+			<option value = "37"> Pick-Up</option>
+			<option value = "38"> Raider</option>
+			<option value = "39"> Ram</option>
+			<option value = "40"> Ranger</option>
+			<option value = "41"> Ridgeline</option>
+			<option value = "42"> S-10 Pickup</option>
+			<option value = "43"> SSR</option>
+			<option value = "44"> Sierra</option>
+			<option value = "45"> Sierra HD</option>
+			<option value = "46"> Sierra Limited</option>
+			<option value = "47"> Silverado</option>
+			<option value = "48"> Silverado HD</option>
+			<option value = "49"> Silverado LD</option>
+			<option value = "50"> Sonoma</option>
+			<option value = "51"> Tacoma</option>
+			<option value = "52"> Titan</option>
+			<option value = "53"> Tundra</option>
+			<option value = "54"> W-Series</option>
+			<option value = "55"> i-290</option>
+			</select>
+			<br>
+			<label for ="gasoline">Choose fuel type:</label>
+			   <select name = "gasoline" id="gasoline">
+				  <option value = "0" selected>Gasoline</option>
+				  <option value = "1">Diesel</option>
+				  </select>
+				  <br><br>
+			   <input type = "submit" value="Submit">
+			</form>
+		</div>
+		<div class="col-md-6">
+
+			{% if truck_pred %} 
+			  <div class="prediction">
+				Your predicted price is: {{truck_pred}}
+			  </div>
+			{% endif %}
+		  </div>
+	
+	</div>
+</div>
+<!-- End Form Area -->
+
     
     <script src="../static/js/jquery-1.11.2.min.js"></script>
 						<script src="../static/js/jquery.scrollUp.min.js"></script> <!-- https://github.com/markgoodyear/scrollup -->

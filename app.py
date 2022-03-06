@@ -1,8 +1,8 @@
-# from asyncio import Event, events
-# from distutils.log import debug, set_verbosity
-# from sklearn import model_selection
-# from werkzeug.utils import secure_filename
-# import pandas as pd
+from asyncio import Event, events
+from distutils.log import debug, set_verbosity
+from sklearn import model_selection
+from werkzeug.utils import secure_filename
+import pandas as pd
 import joblib
 from flask import Flask, render_template, request, redirect, jsonify, make_response
 
@@ -315,17 +315,299 @@ def sedan():
         return  render_template("sedan.html", sedan_pred=sedan_pred) 
     return render_template ("sedan.html")
 
-@app.route("/truck")
+@app.route("/truck", methods=['POST', 'GET'])
 def truck():
-    #display drop down menu with states list
     #accept the user selection and display
-    return render_template("truck.html")    
+    truck_pred=0
+    #truck dictionary goes here
+    trucks_feature_dict = {
+    '17' : ['2500',13621.0],
+    '18' : ['3500',13622.0],
+    '19' : ['B-Series',2741.0],
+    '20' : ['Blackwood',5273.0],
+    '21' : ['Canyon',4093.0],
+    '22' : ['Colorado',4086.0],
+    '23' : ['D-Series',14868.0],
+    '24' : ['Dakota',1941.0],
+    '25' : ['El Camino',14637.0],
+    '26' : ['Explorer Sport Trac',1804.0],
+    '27' : ['F-150',1801.0],
+    '28' : ['F-150 Heritage',7331.0],
+    '29' : ['F-250',1805.0],
+    '30' : ['F-350',1806.0],
+    '31' : ['F-450',1807.0],
+    '32' : ['Frontier',1919.0],
+    '33' : ['GMT-400',10978.0],
+    '34' : ['Gladiator',25919.0],
+    '35' : ['H3T',25774.0],
+    '36' : ['Mark LT',2808.0],
+    '37' : ['Pick-Up',14263.0],
+    '38' : ['Raider',1950.0],
+    '39' : ['Ram',1938.0],
+    '40' : ['Ranger',1803.0],
+    '41' : ['Ridgeline',1866.0],
+    '42' : ['S-10 Pickup',11483.0],
+    '43' : ['SSR',4889.0],
+    '44' : ['Sierra',1857.0],
+    '45' : ['Sierra HD',24909.0],
+    '46' : ['Sierra Limited',24910.0],
+    '47' : ['Silverado',1850.0],
+    '48' : ['Silverado HD',24906.0],
+    '49' : ['Silverado LD',25279.0],
+    '50' : ['Sonoma',11073.0],
+    '51' : ['Tacoma',2223.0],
+    '52' : ['Titan',1920.0],
+    '53' : ['Tundra',2467.0],
+    '54' : ['W-Series',14869.0],
+    '55' : ['i-290',25827.0],
+    }
 
-@app.route("/suv")
+    if request.method=='POST':
+        x=[]
+
+        user_return = int(request.form.get("Model"))
+        model_ID = trucks_feature_dict[f'{user_return}'][1]
+        x.append(model_ID)
+
+
+        modelyear = int(request.form.get("inputYear"))
+        print(modelyear)
+        x.append(modelyear)
+        
+        mileage = int(request.form.get("inputMileage"))
+        print(mileage)
+        x.append(mileage)
+        
+        cylinders= float(request.form.get("cylinders"))
+        print(cylinders)
+        x.append(cylinders)
+        
+        make = int(request.form.get("Make"))
+        print(make)
+        makelist= [0]*13
+        makelist[make]=1
+        print(makelist)
+        x.extend(makelist)
+        
+        model=int(request.form.get("Model"))
+        modellist = [0]*40
+        modellist[model]=1
+        print(modellist)
+        x.extend(modellist)
+
+        # gastype=int(request.form.get("gasoline"))
+        # print(gastype)
+        # x.append(gastype)
+
+        print(x)
+
+        model = joblib.load('./models/trucks_depth_6_785_no_color.joblib')
+        truck_pred= model.predict([x])
+        print(f'truck_pred = {truck_pred}')
+        truck_pred= truck_pred[0]
+        truck_pred = "${0:,.2f}".format(truck_pred)
+
+
+    return render_template("truck.html", truck_pred=truck_pred)    
+
+@app.route("/suv", methods=['POST', 'GET'])
 def suv():
-    #display drop down menu with states list
+    suv_pred =0
+    SUV_feature_dictionary = {
+        '39' : ['500X',10396.0],
+        '40' : ['9-4x',4094.0],
+        '41' : ['9-7X',4603.0],
+        '42' : ['A4 allroad',13759.0],
+        '43' : ['Acadia',1855.0],
+        '44' : ['Accord Crosstour',27165.0],
+        '45' : ['Ascent',24836.0],
+        '46' : ['Aspen',3629.0],
+        '47' : ['Atlas',17618.0],
+        '48' : ['Aviator',2653.0],
+        '49' : ['Axiom',6009.0],
+        '50' : ['Aztek',8884.0],
+        '51' : ['Blazer',11502.0],
+        '52' : ['Bronco',6825.0],
+        '53' : ['CJ-7',15073.0],
+        '54' : ['CR-V',1865.0],
+        '55' : ['Captiva Sport',1846.0],
+        '56' : ['Cayenne',7895.0],
+        '57' : ['Cherokee',1945.0],
+        '58' : ['Commander',1948.0],
+        '59' : ['Compass',1946.0],
+        '60' : ['Cooper',1761.0],
+        '61' : ['Cooper Countryman',1880.0],
+        '62' : ['Cooper S Countryman',1881.0],
+        '63' : ['Crosstour',9173.0],
+        '64' : ['Discovery',9337.0],
+        '65' : ['Discovery Sport',2241.0],
+        '66' : ['Durango',3508.0],
+        '67' : ['E-PACE',22434.0],
+        '68' : ['Edge',1797.0],
+        '69' : ['Element',1868.0],
+        '70' : ['Enclave',1841.0],
+        '71' : ['Encore',1842.0],
+        '72' : ['Envision',11438.0],
+        '73' : ['Envoy',4507.0],
+        '74' : ['Equinox',1847.0],
+        '75' : ['Escalade',1843.0],
+        '76' : ['Escalade ESV',4935.0],
+        '77' : ['Escape',1798.0],
+        '78' : ['Excursion',2370.0],
+        '79' : ['Expedition',1799.0],
+        '80' : ['Expedition MAX',1820.0],
+        '81' : ['Explorer',1800.0],
+        '82' : ['Explorer Sport',5868.0],
+        '83' : ['Explorer Sport Trac',1804.0],
+        '84' : ['F-Pace',11441.0],
+        '85' : ['Flex',1802.0],
+        '86' : ['Freestyle',2379.0],
+        '87' : ['G-Class',2131.0],
+        '88' : ['GL-Class',2130.0],
+        '89' : ['GLA-Class',2084.0],
+        '90' : ['GLB-Class',26498.0],
+        '91' : ['GLC-Class',5885.0],
+        '92' : ['GLE-Class',5886.0],
+        '93' : ['GLK-Class',2132.0],
+        '94' : ['GLS-Class',14005.0],
+        '95' : ['GX',2215.0],
+        '96' : ['Grand Cherokee',1949.0],
+        '97' : ['Grand Vitara',10291.0],
+        '98' : ['Grand Wagoneer',14871.0],
+        '99' : ['H2',4598.0],
+        '100' : ['H3',4599.0],
+        '101' : ['HHR',4586.0],
+        '102' : ['HR-V',9212.0],
+        '103' : ['Highlander',2213.0],
+        '104' : ['LR2',2243.0],
+        '105' : ['LR3',2301.0],
+        '106' : ['LR4',2245.0],
+        '107' : ['LX',2212.0],
+        '108' : ['Levante',11446.0],
+        '109' : ['Liberty',1944.0],
+        '110' : ['M-Class',2129.0],
+        '111' : ['MDX',2147.0],
+        '112' : ['METRIS',11451.0],
+        '113' : ['MKC',3599.0],
+        '114' : ['MKT',1812.0],
+        '115' : ['MKX',1813.0],
+        '116' : ['ML-Class',13819.0],
+        '117' : ['Macan',8031.0],
+        '118' : ['Mariner',1815.0],
+        '119' : ['Montero',2318.0],
+        '120' : ['Montero Sport',5755.0],
+        '121' : ['Mountaineer',1816.0],
+        '122' : ['Nautilus',24892.0],
+        '123' : ['Navigator',1814.0],
+        '124' : ['Nitro',1940.0],
+        '125' : ['Outlook',4596.0],
+        '126' : ['Pacifica',3628.0],
+        '127' : ['Passport',5959.0],
+        '128' : ['Patriot',1947.0],
+        '129' : ['Pilot',1864.0],
+        '130' : ['Q3',4051.0],
+        '131' : ['Q5',3862.0],
+        '132' : ['Q7',3679.0],
+        '133' : ['R-Class',2939.0],
+        '134' : ['RAV4',2217.0],
+        '135' : ['RDX',1871.0],
+        '136' : ['RX',2214.0],
+        '137' : ['Rainier',4954.0],
+        '138' : ['Range Rover',2247.0],
+        '139' : ['Range Rover Evoque',2244.0],
+        '140' : ['Range Rover Sport',2246.0],
+        '141' : ['Range Rover Velar',19055.0],
+        '142' : ['Rendezvous',4955.0],
+        '143' : ['Renegade',6160.0],
+        '144' : ['Rodeo/Amigo',9429.0],
+        '145' : ['SQ5',4052.0],
+        '146' : ['SRX',1844.0],
+        '147' : ['Sorento',2769.0],
+        '148' : ['Sportage',2770.0],
+        '149' : ['Sprinter',1703.0],
+        '150' : ['Stelvio',18005.0],
+        '151' : ['Suburban',1851.0],
+        '152' : ['Tahoe',1852.0],
+        '153' : ['Taurus X',3160.0],
+        '154' : ['Terrain',1858.0],
+        '155' : ['Tiguan',8151.0],
+        '156' : ['Tiguan Limited',24247.0],
+        '157' : ['Torrent',4591.0],
+        '158' : ['Touareg',3136.0],
+        '159' : ['Tracker',1854.0],
+        '160' : ['Trailblazer',4548.0],
+        '161' : ['Traverse',1853.0],
+        '162' : ['Trax',10988.0],
+        '163' : ['Tribute',1860.0],
+        '164' : ['Vue',4595.0],
+        '165' : ['Wrangler',1943.0],
+        '166' : ['Wrangler JK',25197.0],
+        '167' : ['X1',2300.0],
+        '168' : ['X2',24940.0],
+        '169' : ['X3',1719.0],
+        '170' : ['X4',5992.0],
+        '171' : ['X5',1717.0],
+        '172' : ['X6',1714.0],
+        '173' : ['XC40',23714.0],
+        '174' : ['XC60',1962.0],
+        '175' : ['XC90',3132.0],
+        '176' : ['XL7',3143.0],
+        '177' : ['XT4',24948.0],
+        '178' : ['XT5',11442.0],
+        '179' : ['XT6',25856.0],
+        '180' : ['Yukon',1859.0],
+        '181' : ['Yukon XL',4579.0],
+        '182' : ['ZDX',1867.0],
+        }
     #accept the user selection and display 
-    return render_template("suv.html")   
+    if request.method=='POST':
+        x=[]
+
+        user_return = int(request.form.get("Model"))
+        model_ID = SUV_feature_dictionary[f'{user_return}'][1]
+        x.append(model_ID)
+
+
+        modelyear = int(request.form.get("inputYear"))
+        print(modelyear)
+        x.append(modelyear)
+        
+        mileage = int(request.form.get("inputMileage"))
+        print(mileage)
+        x.append(mileage)
+        
+        cylinders= float(request.form.get("cylinders"))
+        print(cylinders)
+        x.append(cylinders)
+        
+        make = int(request.form.get("Make"))
+        print(make)
+        makelist= [0]*36
+        makelist[make]=1
+        print(makelist)
+        x.extend(makelist)
+        
+        model=int(request.form.get("Model"))
+        modellist = [0]*144
+        modellist[model]=1
+        print(modellist)
+        x.extend(modellist)
+
+        gastype=int(request.form.get("gasoline"))
+        print(gastype)
+        x.append(gastype)
+
+        print(x)
+
+        model = joblib.load('./models/suv_depth_7_838_no_color.joblib')
+        suv_pred= model.predict([x])
+        print(f'suv_pred = {suv_pred}')
+        suv_pred= suv_pred[0]
+        suv_pred = "${0:,.2f}".format(suv_pred)
+
+        print(suv_pred) 
+
+    return render_template("suv.html", suv_pred=suv_pred)   
 
 if __name__ == '__main__':
     app.run(debug=True)
