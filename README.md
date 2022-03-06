@@ -45,7 +45,15 @@ The purpose of this project was to develop a machine learning model with a real 
 # Method
 
 First step was to clean the information and in doing so we ended up with a sample of 400,000 entries across all three body classes.
-Initially a model was trained using all data, across a number of Machine Learning models to see which patterns would arise(if any).
+Correlation matrices were made for the data as a whole and then for each Manufacturer. The data as a whole produced little correlation. It was after observing the weights assigned through the training of the model that we were able to see just how important some columns were to calculating the overall ask price of a vehicle.
+
+![All Body Type Corr](visualizations/full_data_correlation.png)
+
+Initially a model was trained using all data with an accuracy of 78%, however after noticing the change in correlation weight three models were produced, each trained on all of the data matching one of three bodyclasses. Each indidual 
+
+Once the models were produced, a flask app was developed to load in the information that would be needed to evaluate the user data per model
+
+
 
 #### Pre-Processing:
 

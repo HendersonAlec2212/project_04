@@ -371,35 +371,50 @@ def truck():
 
 
         modelyear = int(request.form.get("inputYear"))
-        print(modelyear)
         x.append(modelyear)
         
         mileage = int(request.form.get("inputMileage"))
-        print(mileage)
         x.append(mileage)
         
         cylinders= float(request.form.get("cylinders"))
-        print(cylinders)
         x.append(cylinders)
-        
+
+        print('--------------------------------------')
+        print(f'X + first 4 features = {x}')
+        print('--------------------------------------')
+
         make = int(request.form.get("Make"))
-        print(make)
         makelist= [0]*13
-        makelist[make]=1
-        print(makelist)
         x.extend(makelist)
+        x[make]=1
+
+        print('--------------------------------------')
+        print(f'X + make list = {x}')
+        print('--------------------------------------')
+
         
         model=int(request.form.get("Model"))
         modellist = [0]*40
-        modellist[model]=1
-        print(modellist)
         x.extend(modellist)
+        print('--------------------------------------')
+        print(f'X + model list = {x}')
+        print('--------------------------------------')
 
-        # gastype=int(request.form.get("gasoline"))
-        # print(gastype)
-        # x.append(gastype)
+        x[model]=1
 
-        print(x)
+        print('--------------------------------------')
+        print(f'final X before submission = {x}')
+        print('--------------------------------------')
+
+        gastype=int(request.form.get("gasoline"))
+        print(f'gastype = {gastype}')
+        print()
+        x[56] = gastype
+
+        print('--------------------------------------')
+        print(f' len of X = {len(x)}')
+        print('--------------------------------------')
+
 
         model = joblib.load('./models/trucks_depth_6_785_no_color.joblib')
         truck_pred= model.predict([x])
@@ -569,35 +584,44 @@ def suv():
 
 
         modelyear = int(request.form.get("inputYear"))
-        print(modelyear)
+        print(f'modelyear = {modelyear}')
         x.append(modelyear)
         
         mileage = int(request.form.get("inputMileage"))
-        print(mileage)
+        print(f'mileage = {mileage}')
         x.append(mileage)
         
         cylinders= float(request.form.get("cylinders"))
-        print(cylinders)
+        print(f'cylinders = {cylinders}')
         x.append(cylinders)
+
+        print(f'X + first 4 features = {x}')
         
         make = int(request.form.get("Make"))
-        print(make)
+        print(f'make = {make}')
         makelist= [0]*36
-        makelist[make]=1
-        print(makelist)
         x.extend(makelist)
+        x[make]=1
+        print(f'makelist = {makelist}')
         
+        print(f'X + Make_List = {x}')
+
+
         model=int(request.form.get("Model"))
         modellist = [0]*144
-        modellist[model]=1
-        print(modellist)
         x.extend(modellist)
 
+        x[model]=1
+        print(f'modellist = {modellist}')
+
+        print(f'X model list = {x}')
+
+
         gastype=int(request.form.get("gasoline"))
-        print(gastype)
+        print(f'gastype = {gastype}')
         x.append(gastype)
 
-        print(x)
+        print(f'Final X before submission = {x}')
 
         model = joblib.load('./models/suv_depth_7_838_no_color.joblib')
         suv_pred= model.predict([x])
