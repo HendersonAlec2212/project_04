@@ -1,185 +1,126 @@
-SUV_feature_dictionary = {'0' : 'model_ID',
-'1' : 'model_year',
-'2' : 'mileage',
-'3' : 'engine_cylinders',
-'4' : 'ALFA ROMEO',
-'5' : 'AUDI',
-'6' : 'BMW',
-'7' : 'BUICK',
-'8' : 'CADILLAC',
-'9' : 'CHEVROLET',
-'10' : 'CHRYSLER',
-'11' : 'DODGE',
-'12' : 'FIAT',
-'13' : 'FORD',
-'14' : 'GMC',
-'15' : 'HONDA',
-'16' : 'HUMMER',
-'17' : 'ISUZU',
-'18' : 'JAGUAR',
-'19' : 'JEEP',
-'20' : 'KIA',
-'21' : 'LAND ROVER',
-'22' : 'LEXUS',
-'23' : 'LINCOLN',
-'24' : 'MASERATI',
-'25' : 'MAZDA',
-'26' : 'MERCEDES-BENZ',
-'27' : 'MERCURY',
-'28' : 'MINI',
-'29' : 'MITSUBISHI',
-'30' : 'PONTIAC',
-'31' : 'PORSCHE',
-'32' : 'SAAB',
-'33' : 'SATURN',
-'34' : 'SUBARU',
-'35' : 'SUZUKI',
-'36' : 'TOYOTA',
-'37' : 'VOLKSWAGEN',
-'38' : 'VOLVO',
-'39' : ['500X',10396.0],
-'40' : ['9-4x',4094.0],
-'41' : ['9-7X',4603.0],
-'42' : ['A4 allroad',13759.0],
-'43' : ['Acadia',1855.0],
-'44' : ['Accord Crosstour',27165.0],
-'45' : ['Ascent',24836.0],
-'46' : ['Aspen',3629.0],
-'47' : ['Atlas',17618.0],
-'48' : ['Aviator',2653.0],
-'49' : ['Axiom',6009.0],
-'50' : ['Aztek',8884.0],
-'51' : ['Blazer',11502.0],
-'52' : ['Bronco',6825.0],
-'53' : ['CJ-7',15073.0],
-'54' : ['CR-V',1865.0],
-'55' : ['Captiva Sport',1846.0],
-'56' : ['Cayenne',7895.0],
-'57' : ['Cherokee',1945.0],
-'58' : ['Commander',1948.0],
-'59' : ['Compass',1946.0],
-'60' : ['Cooper',1761.0],
-'61' : ['Cooper Countryman',1880.0],
-'62' : ['Cooper S Countryman',1881.0],
-'63' : ['Crosstour',9173.0],
-'64' : ['Discovery',9337.0],
-'65' : ['Discovery Sport',2241.0],
-'66' : ['Durango',3508.0],
-'67' : ['E-PACE',22434.0],
-'68' : ['Edge',1797.0],
-'69' : ['Element',1868.0],
-'70' : ['Enclave',1841.0],
-'71' : ['Encore',1842.0],
-'72' : ['Envision',11438.0],
-'73' : ['Envoy',4507.0],
-'74' : ['Equinox',1847.0],
-'75' : ['Escalade',1843.0],
-'76' : ['Escalade ESV',4935.0],
-'77' : ['Escape',1798.0],
-'78' : ['Excursion',2370.0],
-'79' : ['Expedition',1799.0],
-'80' : ['Expedition MAX',1820.0],
-'81' : ['Explorer',1800.0],
-'82' : ['Explorer Sport',5868.0],
-'83' : ['Explorer Sport Trac',1804.0],
-'84' : ['F-Pace',11441.0],
-'85' : ['Flex',1802.0],
-'86' : ['Freestyle',2379.0],
-'87' : ['G-Class',2131.0],
-'88' : ['GL-Class',2130.0],
-'89' : ['GLA-Class',2084.0],
-'90' : ['GLB-Class',26498.0],
-'91' : ['GLC-Class',5885.0],
-'92' : ['GLE-Class',5886.0],
-'93' : ['GLK-Class',2132.0],
-'94' : ['GLS-Class',14005.0],
-'95' : ['GX',2215.0],
-'96' : ['Grand Cherokee',1949.0],
-'97' : ['Grand Vitara',10291.0],
-'98' : ['Grand Wagoneer',14871.0],
-'99' : ['H2',4598.0],
-'100' : ['H3',4599.0],
-'101' : ['HHR',4586.0],
-'102' : ['HR-V',9212.0],
-'103' : ['Highlander',2213.0],
-'104' : ['LR2',2243.0],
-'105' : ['LR3',2301.0],
-'106' : ['LR4',2245.0],
-'107' : ['LX',2212.0],
-'108' : ['Levante',11446.0],
-'109' : ['Liberty',1944.0],
-'110' : ['M-Class',2129.0],
-'111' : ['MDX',2147.0],
-'112' : ['METRIS',11451.0],
-'113' : ['MKC',3599.0],
-'114' : ['MKT',1812.0],
-'115' : ['MKX',1813.0],
-'116' : ['ML-Class',13819.0],
-'117' : ['Macan',8031.0],
-'118' : ['Mariner',1815.0],
-'119' : ['Montero',2318.0],
-'120' : ['Montero Sport',5755.0],
-'121' : ['Mountaineer',1816.0],
-'122' : ['Nautilus',24892.0],
-'123' : ['Navigator',1814.0],
-'124' : ['Nitro',1940.0],
-'125' : ['Outlook',4596.0],
-'126' : ['Pacifica',3628.0],
-'127' : ['Passport',5959.0],
-'128' : ['Patriot',1947.0],
-'129' : ['Pilot',1864.0],
-'130' : ['Q3',4051.0],
-'131' : ['Q5',3862.0],
-'132' : ['Q7',3679.0],
-'133' : ['R-Class',2939.0],
-'134' : ['RAV4',2217.0],
-'135' : ['RDX',1871.0],
-'136' : ['RX',2214.0],
-'137' : ['Rainier',4954.0],
-'138' : ['Range Rover',2247.0],
-'139' : ['Range Rover Evoque',2244.0],
-'140' : ['Range Rover Sport',2246.0],
-'141' : ['Range Rover Velar',19055.0],
-'142' : ['Rendezvous',4955.0],
-'143' : ['Renegade',6160.0],
-'144' : ['Rodeo/Amigo',9429.0],
-'145' : ['SQ5',4052.0],
-'146' : ['SRX',1844.0],
-'147' : ['Sorento',2769.0],
-'148' : ['Sportage',2770.0],
-'149' : ['Sprinter',1703.0],
-'150' : ['Stelvio',18005.0],
-'151' : ['Suburban',1851.0],
-'152' : ['Tahoe',1852.0],
-'153' : ['Taurus X',3160.0],
-'154' : ['Terrain',1858.0],
-'155' : ['Tiguan',8151.0],
-'156' : ['Tiguan Limited',24247.0],
-'157' : ['Torrent',4591.0],
-'158' : ['Touareg',3136.0],
-'159' : ['Tracker',1854.0],
-'160' : ['Trailblazer',4548.0],
-'161' : ['Traverse',1853.0],
-'162' : ['Trax',10988.0],
-'163' : ['Tribute',1860.0],
-'164' : ['Vue',4595.0],
-'165' : ['Wrangler',1943.0],
-'166' : ['Wrangler JK',25197.0],
-'167' : ['X1',2300.0],
-'168' : ['X2',24940.0],
-'169' : ['X3',1719.0],
-'170' : ['X4',5992.0],
-'171' : ['X5',1717.0],
-'172' : ['X6',1714.0],
-'173' : ['XC40',23714.0],
-'174' : ['XC60',1962.0],
-'175' : ['XC90',3132.0],
-'176' : ['XL7',3143.0],
-'177' : ['XT4',24948.0],
-'178' : ['XT5',11442.0],
-'179' : ['XT6',25856.0],
-'180' : ['Yukon',1859.0],
-'181' : ['Yukon XL',4579.0],
-'182' : ['ZDX',1867.0],
-'183' : ['allroad',3150.0],
-'184' : 'fuel_type',}
+# ML-predictions
+Alec H, Andrew P, Celena B, Dan T, Vilma D.
+
+A full-stack, hosted application that predicts a vehicle's price.
+
+
+# Intro
+
+The purpose of this project was to develop a machine learning model with a real world application. For this we started with a dataset containing almost six million car entries scraped from the CIS auto website, developed a model on the cleaned data and used Flask and HMTL to allow users to interact with and recieve estimations of car value based on the Model Predictions.
+
+
+# Data Set 
+
+![CIS_Automotive_Sample](https://www.kaggle.com/cisautomotiveapi/large-car-dataset)
+
+
+### COLUMNS
+
+'body_class' - If the vehicle was a Sedan, Truck, or SUV.
+
+'brand_name' - The manufacturer of the Vehicle
+
+'model_name' - The Model of the Vehicle
+
+'model_ID' - A unique ID for the Model
+
+'model_year' - The year of Manufacture
+
+'mileage' - Mileage at the time of Sale
+
+'ask_price' - Price listed for sale
+
+'msrp' - Manufacturer Suggested Retail Price
+
+'color' - color
+
+'engine_cylinders' - Number of cylinders
+
+'fuel_type_primary' - Gas/Diesel
+
+**====== Target ======**
+
+'ask_price' - Price listed for sale
+
+# Method
+
+First step was to clean the information and in doing so we ended up with a sample of 400,000 entries across all three body classes.
+Initially a model was trained using all data, across a number of Machine Learning models to see which patterns would arise(if any).
+
+#### Pre-Processing:
+
+The string information classifying the charities by name was uneccessary and was removed. Afterwards we took a look at the number of unique values to understand which columns of the dataset would have a higher impact on the data. Once considered it was understood that we would need to reduce the impact of uncommon/rare data values in columns that could present a bias to the model during training. These values were binned into a single column labeled "Other" and now the scaling of data, construction of dummy columns and building of a N.N. model could take place.
+
+Once the information was processed it was time to create the dummy columns for use within the model before splitting the data into Test/Train sets and scaling using the StandardScaler Method.
+
+
+
+## +++++++++++++++++++++++++++ User Tuned Model +++++++++++++++++++++++++++
+
+With the data ready for training it was time to construct the N.N. model, we used a sequencial model becuase we are interested in a Binary output and the layers will not be shared so this common model will suit us jsut fine. 
+At first we were intersted in evaluating the performance of the model using 3 layers total, 1 hidden with many neurons.
+
+Activation Method(s):
+- Layer 1 & 2 - ReLU
+- Layer 3 - Sigmoid
+
+
+-----------------------------------------------------
+
+Model One Summary:
+
+![Model One Summary](model_01_summary.png)
+
+-----------------------------------------------------
+
+
+Model One Accuracy:
+
+![Model One Accuracy](model_01_accuracy.png)
+
+
+-----------------------------------------------------
+
+## +++++++++++++++++++++++++++ Keras Tuned Model +++++++++++++++++++++++++++
+
+After the first model was constructed there was a curiosity over what the potential accuracy of a model that was tuned using more hyperparameters and a means of selecting those that would be the best fit.
+A method was constructed to do just that, allowing for evaluation of the data using three algorithms (Relu, Tanh, and Sigmoid), a number of layers and a max of 30 neurons per layer before being let loose on the training data to provide the following results:
+
+ ![Keras Model](keras_method.png)
+
+-----------------------------------------------------
+
+ ![Keras Accuracy](keras_accuracy.png)
+
+-----------------------------------------------------
+
+# Analysis
+## Results:
+### User_Model_ReLU: 
+>- Activation Method: ReLU 
+>- Accuracy: 72.71% 
+>- Loss: 56.94% 
+
+### Keras_Model:
+>- Activation Method: Tanh
+>- Accuracy: 73.27%
+>- Loss: 55.69%
+
+Orignally ReLU was chosen in the User_model for its flexibility in dealing with a larger range of numbers, one that would provide useful results. It was interesting to see the slight improvement in performance when the Keras_model evaluated Tanh as the best Activation method, resulting in an slight increase in Accuracy of the model. 
+Once this was observed the initial User_model was recompiled using Tanh as the activation method with the following results.
+
+### User_Model_Tanh: 
+>- Activation Method: Tanh 
+>- Accuracy: 72.90% 
+>- Loss: 56.58%
+
+
+# Conclusion
+
+A surprising outcome of this project was seeign that the most accurate model was much simplier than the initial User_model containing much fewer neurons, but keeping with the 3 layer construction.
+
+One of the aspects of machine learning is testing models with just the right hyperparameters. Unsurprisingly the model that had the most tuning proved to show the highest accuracy and lowest loss, however the varaition of those values between the models is very slight and lacks significance. Taking the time to construct a means of hypertuning and comparing results per epoch of model with differing activation fuctions, layers, and neurons will always be preferred to an educated guess when defining model complexity because the iterative changes can be observed as the model tests data and the process will be much more time-efficient when compared to hand tuning.
+Guesses, even when educated can make for a nice starting point when considering complexity but should be pared with adequate reasoning to avoid the wasting of resources.
+
+
+
