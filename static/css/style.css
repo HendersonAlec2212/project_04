@@ -597,11 +597,11 @@ input {
 /* RESULTS */
 
 .results {
-  border: #8d8d8d;
+  /* border: #8d8d8d; */
   color: #E6E6E6;
-  border-radius: 20px;
-  border-width: 5px;
-  border-style: solid;
+  /* border-radius: 20px; */
+  /* border-width: 5px; */
+  /* border-style: solid; */
   display: block;
   margin: 0% 30% 0% 30%;
 }
