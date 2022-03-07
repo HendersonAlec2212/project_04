@@ -14,7 +14,7 @@ http://www.templatemo.com/tm-476-conquer
 	<link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle">
@@ -22,17 +22,17 @@ http://www.templatemo.com/tm-476-conquer
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>                        
 				</button>
-			</div>   
+			</div>
 			<div class="single-page-nav sticky-wrapper" id="tmNavbar">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Homepage</a></li>
-					<li><a href="{{url_for('sedan')}}">Sedans</a></li>
-					<li><a href="{{url_for('truck')}}">Trucks</a></li>
-					<li><a href="{{url_for('suv')}}">SUVs</a></li>
+					<li><a href="#"class="btn">Homepage</a></li>
+					<li><a href="{{url_for('sedan')}}" class="btn">Sedans</a></li>
+					<li><a href="{{url_for('truck')}}" class="btn">Truck</a></li>
+					<li><a href="{{url_for('suv')}}"class="btn">SUVs</a></li>
 				</ul>
 			</div>   
 		</div>
-	</nav>    
+	</nav>     -->
 
 	<div id="section1">
 		<header id="header-area" class="intro-section">
@@ -57,17 +57,17 @@ http://www.templatemo.com/tm-476-conquer
 						<div class="feature-content">
 							<img src="static/img/sedan 1.jpg" alt="Image">
 							<h2 class="feature-content-title green-text">Sedans</h2>
-							<p class="feature-content-description">Price prediction modeler for 2 or 4 door, Foreign or domestic Sedans
+							<p class="feature-content-description">Price prediction model for 2 or 4 door, Foreign or domestic Sedans
 							</p>
-							<!-- <a href="{{url_for('sedan')}}" class="feature-content-link green-btn">Sedan</a> -->
-							<a href="/sedan" class="feature-content-link green-btn">Sedan</a>
+							<a href="{{url_for('sedan')}}" class="feature-content-link green-btn">Sedan</a>
+							<!-- <a href="/sedan" class="feature-content-link green-btn">Sedan</a> -->
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="feature-content">
 							<img src="static/img/truck 1.jpg" alt="Image">
 							<h2 class="feature-content-title blue-text">Trucks</h2>
-							<p class="feature-content-description">Price prediction modeler for 2 or 4 door 2-wheel or 4-wheel drive, foreign or domestic trucks</p>                    
+							<p class="feature-content-description">Price prediction model for 2 or 4 door 2-wheel or 4-wheel drive, foreign or domestic trucks</p>                    
 							<a href="{{url_for('truck')}}" class="feature-content-link blue-btn">Truck</a>
 						</div>
 					</div>
@@ -75,7 +75,7 @@ http://www.templatemo.com/tm-476-conquer
 						<div class="feature-content">
 							<img src="static/img/SUV 1.jpg" alt="Image">
 							<h2 class="feature-content-title red-text">Sport Utility Vehicles</h2>
-							<p class="feature-content-description"> Price prediction modeler for 2-wheel or 4-wheel drive, foreign or domestic SUVs
+							<p class="feature-content-description"> Price prediction model for 2-wheel or 4-wheel drive, foreign or domestic SUVs
 							</p>
 							<a href="{{url_for('suv')}}" class="feature-content-link red-btn">SUV</a>
 						</div>

@@ -2,7 +2,7 @@ from asyncio import Event, events
 from distutils.log import debug, set_verbosity
 from sklearn import model_selection
 from werkzeug.utils import secure_filename
-import pandas as pd
+# import pandas as pd
 import joblib
 from flask import Flask, render_template, request, redirect, jsonify, make_response
 
