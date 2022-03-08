@@ -1,5 +1,5 @@
 # heroku link to deployed Application:
-![Vehicle Price Predictor](https://vehicle-price-estimator-p4.herokuapp.com/)
+[Vehicle Price Predictor](https://vehicle-price-estimator-p4.herokuapp.com/)
 
 
 
@@ -16,7 +16,7 @@ The purpose of this project was to develop a machine learning model with a real 
 
 # Data Set 
 
-![CIS_Automotive_Sample](https://www.kaggle.com/cisautomotiveapi/large-car-dataset)
+[CIS_Automotive_Sample](https://www.kaggle.com/cisautomotiveapi/large-car-dataset)
 
 
 ### COLUMNS
