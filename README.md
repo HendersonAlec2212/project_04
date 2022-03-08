@@ -55,38 +55,54 @@ Once the models were produced, a front end web page was set up to allow for data
 
 
 
-#### Pre-Processing:
+#### Post-Processing:
 
-discuss columns removed and why. see top 10 features of graph, discuss 12 day timeline and restrictions due to time
+A number of coumns were not considered in the training of the models due to their low correlation scores when evaluated at the beginning of the model training in addition, the top ten features of the models were evalutated after the initial training/testing. Those with too low of a correlation or weight were removed in future training to improve accuracy,
+#### The following columns were removed:
+- vin
+- msrp
+- color
 
 
 
-## +++++++++++++++++++++++++++ Model +++++++++++++++++++++++++++
+## +++++++++++++++ Model +++++++++++++++
 
-discuss the model used, perameters accuracy and steps taken to achieve model
+For this project we used a Random Forest Regression model for our data predictions.
 
-consider possible changes to improve model
-more data, more features, etc
+### Advantages of the model:
 
-# Analysis
-## Results:
+Random Forest models make predictions based on the average of previously observed data, can handle large datasets without variable deletion, and generate an unbiased estimate of the generalization error as the forest building progresses, so a dataset of vehicles and prices was a fantastic fit for this model type.
 
-list the model results either using snipped photos or type it out
+### Limitaitons of the model:
+
+Random Forest models have been observed to overfit noisy datasets, to avoid this we were strenuous in cleaning the training data which reduced the inital dataset by over 60%. This impacted the precision of the predictions for trucks, the model trained with the lowest amount of data and as such contains the highest possiblity for innacuracies, amongst the vehicle models with the lowest representation.
+
+Each model achieved above a 78z% accuracy with a depth of 7 'trees' each having 100 estimators or 'branches'
+
+### Changes to Improve the Model:
+
+- Increasing n_estimators until either the time taken to train the model is unrealistic, or the model is prven to overfit the training data.
+
+- Increase the amount of data in either 'pristine' condition (no NaN values across all features and no errors) or close enough to ensure an increase in accuracy without chance of bias towards certain features due to representation in the data.
+
+- Consider which features best represent the worth of a car; adding an aggregation to stand for the average amount of maintenance in dollars($USD) per year, per model could provide an insight into the long term value of a vehicle when considering the cost of ownership over it's lifetime.
+
+# Results:
+### Sedan:
+ ![ sedan_model_results](/visualizations/model_results/sedan_model_results.png)
+
+### Truck:
+ ![ truck_model_results](/visualizations/model_results/truck_model_results.png)
+
+### SUV:
+ ![ suv_model_results](/visualizations/model_results/suv_model_results.png)
+
+
 
 # Conclusion
 
-EDIT THIS - IT IS FROM A DIFFERENT PROJECT
-
-EDIT THIS - IT IS FROM A DIFFERENT PROJECT
-
-EDIT THIS - IT IS FROM A DIFFERENT PROJECT
-
-EDIT THIS - IT IS FROM A DIFFERENT PROJECT
-
-A surprising outcome of this project was seeign that the most accurate model was much simplier than the initial User_model containing much fewer neurons, but keeping with the 3 layer construction.
-
-One of the aspects of machine learning is testing models with just the right hyperparameters. Unsurprisingly the model that had the most tuning proved to show the highest accuracy and lowest loss, however the varaition of those values between the models is very slight and lacks significance. Taking the time to construct a means of hypertuning and comparing results per epoch of model with differing activation fuctions, layers, and neurons will always be preferred to an educated guess when defining model complexity because the iterative changes can be observed as the model tests data and the process will be much more time-efficient when compared to hand tuning.
-Guesses, even when educated can make for a nice starting point when considering complexity but should be pared with adequate reasoning to avoid the wasting of resources.
+This project combined many steps from developing an interface for the User to manipulate for data submission to training a Machine Learning Model to interpret the data and provide an accurate response. The main challenge, as with any kind of learning was that there's always more to learn and by extension - train. Having a data set that contains features that truly capture the value of a car will allow for the best predictions but not in all situations. Random Forest Models do not allow for extrapolation and 'thinking outside of the box', the model will return a prediction that best matches the average of the data fed during the training phase(s).
+So to reach a full-fledge conclusion, more than one means of problem solving should be implemented, wiht the prediction being the starting point.
 
 
 
