@@ -95,12 +95,23 @@ Each model achieved above a 78z% accuracy with a depth of 7 'trees' each having 
 # Results:
 ### Sedan:
  ![ sedan_model_results](/visualizations/model_results/sedan_model_results.png)
+ ### Mean Absolute Error:
+ ![ sedan_MAE](/visualizations/mean_absolute_error/sedan_MAE.png)
+
 
 ### Truck:
  ![ truck_model_results](/visualizations/model_results/truck_model_results.png)
+ ### Mean Absolute Error:
+
+ ![ truck_MAE](/visualizations/mean_absolute_error/truck_MAE.png)
+
 
 ### SUV:
  ![ suv_model_results](/visualizations/model_results/suv_model_results.png)
+ ### Mean Absolute Error:
+
+ ![ SUV_MAE](/visualizations/mean_absolute_error/SUV_MAE.png)
+
 
 
 
