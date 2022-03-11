@@ -122,3 +122,5 @@ So to reach a full-fledge conclusion, more than one means of problem solving sho
 
 
 
+LinkedIn: https://www.linkedin.com/in/alec-henderson-8011b521a/
+Email: hendersonalec2212@gmail.com
